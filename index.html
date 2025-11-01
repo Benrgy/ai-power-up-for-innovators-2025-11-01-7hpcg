@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Power-Up for Innovators - Bring your boldest ideas to life with our AI automation expertise. Rapid prototyping, API integrations, and machine learning development.">
+    <meta name="keywords" content="AI, automation, machine learning, API integrations, prototyping">
+    <meta name="author" content="AI Power-Up">
+    <title>AI Power-Up for Innovators | AI Automation Expertise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .retro-grid {
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+        }
+
+        .retro-stripe {
+            background: repeating-linear-gradient(
+                45deg,
+                #ff0000,
+                #ff0000 10px,
+                #ffff00 10px,
+                #ffff00 20px
+            );
+        }
+
+        .retro-button {
+            position: relative;
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .retro-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .retro-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .retro-card {
+            border: 3px solid #000;
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .retro-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .retro-title {
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .retro-accent {
+            background: linear-gradient(135deg, #ff0000 0%, #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-answer {
+            max-height: 500px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.hidden {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .smooth-transition {
+            transition: all 0.3s ease;
+        }
+
+        .star-rating {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header Navigation -->
+    <header class="sticky-header">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-bolt text-white font-bold text-lg"></i>
+                </div>
+                <span class="text-xl font-bold retro-title text-gray-900">AI POWER-UP</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-700 hover:text-red-500 font-medium transition-colors duration-300">Features</a>
+                <a href="#benefits" class="text-gray-700 hover:text-red-500 font-medium transition-colors duration-300">Benefits</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-red-500 font-medium transition-colors duration-300">Testimonials</a>
+                <a href="#about" class="text-gray-700 hover:text-red-500 font-medium transition-colors duration-300">About</a>
+                <a href="https://example.com" class="retro-button bg-red-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-600">Get Started</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                <i class="fas fa-bars text-gray-900 text-xl"></i>
+            </button>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden absolute top-full left-0 right-0 bg-white border-b-4 border-red-500 md:hidden shadow-lg">
+                <div class="container mx-auto max-w-7xl px-4 py-4 flex flex-col space-y-4">
+                    <a href="#features" class="text-gray-700 hover:text-red-500 font-medium py-2 transition-colors duration-300">Features</a>
+                    <a href="#benefits" class="text-gray-700 hover:text-red-500 font-medium py-2 transition-colors duration-300">Benefits</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-red-500 font-medium py-2 transition-colors duration-300">Testimonials</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-500 font-medium py-2 transition-colors duration-300">About</a>
+                    <a href="https://example.com" class="retro-button bg-red-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-600 inline-block">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="retro-grid py-24 md:py-32 lg:py-40 relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block">
+                        <div class="retro-card bg-yellow-300 px-4 py-2 rounded-lg">
+                            <span class="text-sm font-bold retro-title text-gray-900">✨ AI Innovation Platform</span>
+                        </div>
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black retro-title text-gray-900 leading-tight">
+                        AI Power-Up<br />for Innovators
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-xl">
+                        Bring your boldest ideas to life with our AI automation expertise, turning concepts into automated realities. Transform your vision into production-ready solutions with cutting-edge AI technology and expert guidance.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                        <a href="https://example.com" class="retro-button bg-red-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-600 inline-flex items-center justify-center space-x-2 transition-all duration-300">
+                            <span>Start Your Journey</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <button class="retro-button border-4 border-gray-900 bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 inline-flex items-center justify-center space-x-2 transition-all duration-300">
+                            <span>Learn More</span>
+                            <i class="fas fa-play-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative h-96 sm:h-full min-h-96">
+                    <div class="absolute inset-0 retro-card bg-gradient-to-br from-red-400 to-yellow-300 rounded-2xl flex items-center justify-center">
+                        <div class="text-center space-y-4">
+                            <div class="text-6xl">
+                                <i class="fas fa-brain text-red-600"></i>
+                            </div>
+                            <p class="text-2xl font-bold retro-title text-gray-900">AI Powered</p>
+                            <p class="text-gray-800 font-semibold">Innovation at Scale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 md:py-32 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <div class="retro-card bg-red-500 text-white px-4 py-2 rounded-lg">
+                        <span class="text-sm font-bold retro-title">CORE CAPABILITIES</span>
+                    </div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900 mb-4">
+                    Powerful AI Features
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Everything you need to build, deploy, and scale intelligent automation solutions with confidence and precision.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: Rapid Prototyping -->
+                <div class="retro-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="w-16 h-16 bg-yellow-300 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-rocket text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-900 mb-3">Rapid Prototyping</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Go from concept to working prototype in days, not months. Our streamlined development framework accelerates your time-to-market and lets you validate ideas quickly with minimal resource investment.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Pre-built templates and components</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Instant deployment capabilities</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Real-time iteration and feedback</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2: API Integrations -->
+                <div class="retro-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="w-16 h-16 bg-red-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-plug text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-900 mb-3">API Integrations</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Seamlessly connect with your existing tech stack through our comprehensive API ecosystem. Integrate with 500+ services and build custom connections that work exactly the way you need them to.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>RESTful and GraphQL APIs</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Webhook support for real-time data</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Enterprise-grade security protocols</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3: Machine Learning Development -->
+                <div class="retro-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer">
+                    <div class="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-network-wired text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-900 mb-3">Machine Learning Development</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Build sophisticated machine learning models without deep expertise. Our platform handles the complexity while you focus on solving real business problems with AI-powered insights.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Pre-trained model libraries</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Automated model optimization</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-red-500 font-bold"></i>
+                            <span>Advanced analytics and monitoring</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-100 rounded-full opacity-20 -mr-48 -mt-48"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-100 rounded-full opacity-20 -ml-48 -mb-48"></div>
+        
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <div class="retro-card bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg">
+                        <span class="text-sm font-bold retro-title">WHY CHOOSE US</span>
+                    </div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900 mb-4">
+                    Transform Your Business
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Experience measurable improvements across every aspect of your operations with AI-powered automation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Benefit 1 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-red-500 text-white font-bold text-2xl">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold retro-title text-gray-900 mb-2">10x Faster Deployment</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Deploy AI solutions in a fraction of the traditional timeframe. Our optimized workflows and pre-built components reduce development cycles from months to weeks, getting you to market faster than competitors.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-yellow-400 text-gray-900 font-bold text-2xl">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold retro-title text-gray-900 mb-2">50% Cost Reduction</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Dramatically reduce infrastructure and development costs. Our efficient architecture and automated optimization mean you get enterprise-grade AI capabilities at a fraction of traditional pricing models.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-blue-500 text-white font-bold text-2xl">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold retro-title text-gray-900 mb-2">Enterprise Security</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Bank-level encryption and compliance with GDPR, HIPAA, and SOC 2 standards. Your data is protected with military-grade security protocols and continuous monitoring to ensure maximum safety and compliance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-lg bg-green-500 text-white font-bold text-2xl">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold retro-title text-gray-900 mb-2">24/7 Expert Support</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Get dedicated support from AI specialists who understand your business. Our expert team is available around the clock to help you optimize, troubleshoot, and scale your AI initiatives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 md:py-32 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <div class="retro-card bg-red-500 text-white px-4 py-2 rounded-lg">
+                        <span class="text-sm font-bold retro-title">CUSTOMER SUCCESS</span>
+                    </div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900 mb-4">
+                    Loved by Innovators
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    See what industry leaders are saying about their AI transformation journey with us.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="retro-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">
+                        "This platform completely transformed how we approach AI development. What used to take our team 6 months now takes 2 weeks. The API integrations are seamless, and the support team is incredibly responsive. We've already deployed three major projects and saved over $500K in development costs."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-yellow-300 rounded-full flex items-center justify-center font-bold text-white">
+                            SJ
+                        </div>
+                        <div>
+                            <p class="font-bold retro-title text-gray-900">Sarah Johnson</p>
+                            <p class="text-sm text-gray-600">CTO, TechVision Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="retro-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">
+                        "Outstanding platform! The machine learning capabilities are powerful yet accessible. Our team went from having zero ML experience to deploying sophisticated models in production. The documentation is excellent, and the community support is fantastic."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center font-bold text-white">
+                            MC
+                        </div>
+                        <div>
+                            <p class="font-bold retro-title text-gray-900">Marcus Chen</p>
+                            <p class="text-sm text-gray-600">Product Lead, DataFlow Systems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="retro-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">
+                        "Incredible value for money. We were able to automate 70% of our manual processes within three months. The rapid prototyping features let us experiment with different AI approaches without massive investment. Highly recommended!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-400 rounded-full flex items-center justify-center font-bold text-white">
+                            EM
+                        </div>
+                        <div>
+                            <p class="font-bold retro-title text-gray-900">Elena Martinez</p>
+                            <p class="text-sm text-gray-600">Operations Director, Global Solutions Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="retro-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                        <i class="fas fa-star star-rating"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">
+                        "The best investment we made this year. The platform's integration capabilities allowed us to connect all our tools seamlessly. Our team productivity increased by 40%, and we've been able to take on more complex projects. The 24/7 support is a game-changer."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center font-bold text-white">
+                            DR
+                        </div>
+                        <div>
+                            <p class="font-bold retro-title text-gray-900">David Rodriguez</p>
+                            <p class="text-sm text-gray-600">Founder, Innovation Labs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-yellow-100 rounded-full opacity-20 -ml-48 -mt-48"></div>
+        
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <div class="retro-card bg-blue-500 text-white px-4 py-2 rounded-lg">
+                        <span class="text-sm font-bold retro-title">OUR STORY</span>
+                    </div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900 mb-4">
+                    About AI Power-Up
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Founded in 2019 by a team of AI researchers and software engineers, AI Power-Up emerged from a simple observation: building AI solutions shouldn't require a PhD or a massive budget. We started in a small garage with a mission to democratize artificial intelligence and make it accessible to businesses of all sizes. Over the past five years, we've grown from a scrappy startup to a trusted partner for over 500 companies worldwide, ranging from ambitious startups to Fortune 500 enterprises. Our journey has been driven by countless conversations with innovators, developers, and business leaders who showed us exactly what was missing in the AI development landscape.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Today, our core mission remains unchanged: to empower organizations to harness the transformative power of AI without the traditional barriers of complexity and cost. We believe that artificial intelligence should be a tool for everyone, not just elite technical teams. Our values of transparency, innovation, and customer-centricity guide every decision we make. We're committed to continuous improvement, investing heavily in research and development to stay at the cutting edge of AI technology. Every feature we build, every integration we create, and every piece of support we provide is designed with one goal in mind: helping our customers succeed in their AI transformation journey and achieve their boldest ambitions.
+                    </p>
+                </div>
+                <div class="retro-card bg-gradient-to-br from-red-400 via-yellow-300 to-blue-400 p-12 rounded-2xl flex flex-col items-center justify-center min-h-96">
+                    <div class="text-center space-y-6">
+                        <div class="text-6xl font-black retro-title text-white">500+</div>
+                        <p class="text-xl font-bold text-white">Companies Transformed</p>
+                        <div class="border-t-4 border-white pt-6 w-full">
+                            <p class="text-white font-semibold">Trusted by innovators worldwide to deliver AI solutions that matter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 md:py-32 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1677442d019cecf8f69b4ee4efdc6a78?w=1200&h=600&fit=crop');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-white">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl sm:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+                    Join hundreds of innovative companies already leveraging AI to automate processes, reduce costs, and unlock new opportunities. Start your free trial today and see the difference AI can make.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <a href="https://example.com" class="retro-button bg-red-500 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-red-600 inline-flex items-center justify-center space-x-2 transition-all duration-300">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <button class="retro-button border-4 border-white bg-transparent text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 inline-flex items-center justify-center space-x-2 transition-all duration-300">
+                        <span>Schedule Demo</span>
+                        <i class="fas fa-calendar"></i>
+                    </button>
+                </div>
+                <p class="text-gray-200 text-sm">
+                    No credit card required • Setup in minutes • Cancel anytime
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-white font-bold text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold retro-title text-white">AI POWER-UP</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Empowering innovators with AI automation expertise and cutting-edge technology solutions.
+                    </p>
+                </div>
+
+                <!-- Product Column -->
+                <div class="space-y-4">
+                    <h4 class="font-bold retro-title text-white mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-red-500 transition-colors duration-300">Features</a></li>
+                        <li><a href="#benefits" class="hover:text-red-500 transition-colors duration-300">Benefits</a></li>
+                        <li><a href="#testimonials" class="hover:text-red-500 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="space-y-4">
+                    <h4 class="font-bold retro-title text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-red-500 transition-colors duration-300">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-red-500 transition-colors duration-300">Blog</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Careers</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div class="space-y-4">
+                    <h4 class="font-bold retro-title text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-red-500 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-red-500 transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Security</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="border-t border-gray-800 pt-12 mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="space-y-2">
+                        <p class="font-bold retro-title text-white">Email</p>
+                        <a href="mailto:bengrauwde@hotmail.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+                            bengrauwde@hotmail.com
+                        </a>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-bold retro-title text-white">Follow Us</p>
+                        <div class="flex gap-4">
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="Twitter">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="GitHub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="Facebook">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-bold retro-title text-white">Newsletter</p>
+                        <p class="text-gray-400 text-sm">Subscribe for AI insights and updates</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 AI Power-Up. All rights reserved. Powered by Claude (Anthropic).
+                </p>
+                <div class="flex gap-6 text-gray-400 text-sm">
+                    <a href="privacy.html" class="hover:text-red-500 transition-colors duration-300">Privacy</a>
+                    <a href="terms.html" class="hover:text-red-500 transition-colors duration-300">Terms</a>
+                    <a href="blog.html" class="hover:text-red-500 transition-colors duration-300">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('header nav .mobile-menu-button');
+            const mobileMenu = document.querySelector('header nav .mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
