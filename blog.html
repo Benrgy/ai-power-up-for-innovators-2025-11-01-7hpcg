@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Power-Up Blog - Expert insights on AI automation, machine learning, API integrations, and business transformation. Stay updated with the latest trends in artificial intelligence.">
+    <meta name="keywords" content="AI blog, automation insights, machine learning articles, API integrations, AI trends, business transformation">
+    <meta name="author" content="AI Power-Up">
+    <title>AI Power-Up Blog | AI Automation Insights & Expert Articles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .retro-grid {
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+        }
+
+        .retro-stripe {
+            background: repeating-linear-gradient(
+                45deg,
+                #ff0000,
+                #ff0000 10px,
+                #ffff00 10px,
+                #ffff00 20px
+            );
+        }
+
+        .retro-button {
+            position: relative;
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .retro-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .retro-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .retro-card {
+            border: 3px solid #000;
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .retro-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .retro-title {
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .retro-accent {
+            background: linear-gradient(135deg, #ff0000 0%, #ffff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-answer {
+            max-height: 500px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.hidden {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .smooth-transition {
+            transition: all 0.3s ease;
+        }
+
+        .star-rating {
+            color: #fbbf24;
+        }
+
+        .blog-card {
+            border: 3px solid #000;
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header Navigation -->
+    <header class="sticky-header">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="https://Benrgy.github.io/ai-power-up-for-innovators-2025-11-01-7hpcg" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-bolt text-white font-bold text-lg"></i>
+                </div>
+                <span class="text-xl font-bold retro-title text-gray-900">AI POWER-UP</span>
+            </a>
+
+            <a href="https://Benrgy.github.io/ai-power-up-for-innovators-2025-11-01-7hpcg" class="text-gray-700 hover:text-red-500 font-medium transition-colors duration-300">
+                ← Back
+            </a>
+        </nav>
+    </header>
+
+    <!-- Blog Header Section -->
+    <section class="retro-grid py-24 md:py-32 lg:py-40 relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="space-y-6 max-w-3xl">
+                <div class="inline-block">
+                    <div class="retro-card bg-yellow-300 px-4 py-2 rounded-lg">
+                        <span class="text-sm font-bold retro-title text-gray-900">✨ AI Insights & Expertise</span>
+                    </div>
+                </div>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black retro-title text-gray-900 leading-tight">
+                    Our Blog
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-2xl">
+                    Discover in-depth articles, expert insights, and practical guides on AI automation, machine learning, API integrations, and business transformation. Stay ahead of the curve with cutting-edge knowledge from industry leaders.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Blog Post Section -->
+    <section class="py-24 md:py-32 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <div class="retro-card bg-red-500 text-white px-4 py-2 rounded-lg">
+                        <span class="text-sm font-bold retro-title">FEATURED ARTICLE</span>
+                    </div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900 mb-4">
+                    Latest from the Blog
+                </h2>
+            </div>
+
+            <!-- Featured Post Card -->
+            <div class="blog-card bg-white p-8 md:p-12 rounded-xl max-w-4xl mx-auto">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fas fa-calendar-alt text-red-500"></i>
+                    <span class="text-sm font-semibold text-gray-600">November 1, 2025</span>
+                </div>
+                
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-black retro-title text-gray-900 mb-6 leading-tight">
+                    The Complete Guide to AI Automation for Modern Businesses in 2025
+                </h3>
+
+                <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+                    <p class="leading-relaxed mb-4">
+                        <strong>AI Automation: Transform Your Business in 2025</strong>
+                    </p>
+                    <p class="leading-relaxed mb-4">
+                        AI automation has become essential for competitive advantage, enabling businesses to reduce costs, accelerate innovation, and unlock new opportunities. This guide explores rapid prototyping—validating ideas in weeks rather than months—seamless API integrations connecting AI to existing systems, and sophisticated machine learning development. 
+                    </p>
+                    <p class="leading-relaxed mb-4">
+                        Real-world implementations across industries demonstrate measurable impact: manufacturing reduces equipment failures by 50%, retail increases order value by 20-30%, and customer service resolves 60% of inquiries automatically. Success requires starting with high-impact projects, building cross-functional teams, investing in data infrastructure, and managing organizational change thoughtfully. 
+                    </p>
+                    <p class="leading-relaxed">
+                        Organizations embracing strategic AI implementation today will capture competitive advantages that compound over time.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-8 border-t-2 border-gray-200">
+                    <a href="https://Benrgy.github.io/ai-power-up-for-innovators-2025-11-01-7hpcg/blog/the-complete-guide-to-ai-automation-for-modern-bus.html" class="retro-button bg-red-500 text-white px-8 py-3 rounded-lg font-bold inline-flex items-center justify-center space-x-2 transition-all duration-300 hover:bg-red-600">
+                        <span>Read Full Article</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="flex items-center gap-4 text-gray-600">
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-clock"></i>
+                            <span class="text-sm">8 min read</span>
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-tag"></i>
+                            <span class="text-sm">AI Automation</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories Section -->
+    <section class="py-24 md:py-32 bg-white">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900 mb-4">
+                    Explore by Topic
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Browse articles organized by subject to find the content most relevant to your interests and needs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div class="blog-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                    <div class="w-16 h-16 bg-red-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-900 mb-3">AI Automation</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Discover how to automate business processes, reduce manual work, and scale operations with intelligent AI systems.
+                    </p>
+                    <div class="text-red-500 font-bold flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                        <span>Explore</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="blog-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                    <div class="w-16 h-16 bg-yellow-400 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-brain text-gray-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-900 mb-3">Machine Learning</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Learn about building, training, and deploying machine learning models that drive real business value.
+                    </p>
+                    <div class="text-red-500 font-bold flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                        <span>Explore</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="blog-card bg-white p-8 rounded-xl hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                    <div class="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-plug text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-900 mb-3">API Integration</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Master API integrations and connect AI solutions seamlessly with your existing technology stack.
+                    </p>
+                    <div class="text-red-500 font-bold flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                        <span>Explore</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="py-24 md:py-32 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900 mb-4">
+                    More Articles Coming Soon
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    We're constantly publishing new content to help you stay informed about the latest AI trends and best practices.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Placeholder 1 -->
+                <div class="blog-card bg-white p-8 rounded-xl opacity-60">
+                    <div class="w-16 h-16 bg-gray-300 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hourglass-end text-gray-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-600 mb-3">Coming Soon</h3>
+                    <p class="text-gray-500 mb-4 leading-relaxed">
+                        New article in development. Check back soon for fresh insights on AI and automation.
+                    </p>
+                </div>
+
+                <!-- Placeholder 2 -->
+                <div class="blog-card bg-white p-8 rounded-xl opacity-60">
+                    <div class="w-16 h-16 bg-gray-300 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hourglass-end text-gray-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-600 mb-3">Coming Soon</h3>
+                    <p class="text-gray-500 mb-4 leading-relaxed">
+                        New article in development. Check back soon for fresh insights on AI and automation.
+                    </p>
+                </div>
+
+                <!-- Placeholder 3 -->
+                <div class="blog-card bg-white p-8 rounded-xl opacity-60">
+                    <div class="w-16 h-16 bg-gray-300 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hourglass-end text-gray-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold retro-title text-gray-600 mb-3">Coming Soon</h3>
+                    <p class="text-gray-500 mb-4 leading-relaxed">
+                        New article in development. Check back soon for fresh insights on AI and automation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-100 rounded-full opacity-20 -mr-48 -mt-48"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-100 rounded-full opacity-20 -ml-48 -mb-48"></div>
+        
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8 max-w-2xl mx-auto">
+                <div class="inline-block">
+                    <div class="retro-card bg-blue-500 text-white px-4 py-2 rounded-lg">
+                        <span class="text-sm font-bold retro-title">STAY UPDATED</span>
+                    </div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-gray-900">
+                    Subscribe to Our Newsletter
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Get the latest AI insights, expert tips, and industry trends delivered directly to your inbox. Join hundreds of innovators staying ahead of the curve.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 border-2 border-gray-900 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300" />
+                    <button class="retro-button bg-red-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-600 inline-flex items-center justify-center space-x-2 transition-all duration-300">
+                        <span>Subscribe</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-600">
+                    No spam, unsubscribe anytime. We respect your privacy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 md:py-32 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1677442d019cecf8f69b4ee4efdc6a78?w=1200&h=600&fit=crop');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black retro-title text-white">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl sm:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+                    Join hundreds of innovative companies already leveraging AI to automate processes, reduce costs, and unlock new opportunities. Start your free trial today and see the difference AI can make.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <a href="https://example.com" class="retro-button bg-red-500 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-red-600 inline-flex items-center justify-center space-x-2 transition-all duration-300">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <button class="retro-button border-4 border-white bg-transparent text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 inline-flex items-center justify-center space-x-2 transition-all duration-300">
+                        <span>Schedule Demo</span>
+                        <i class="fas fa-calendar"></i>
+                    </button>
+                </div>
+                <p class="text-gray-200 text-sm">
+                    No credit card required • Setup in minutes • Cancel anytime
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-white font-bold text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold retro-title text-white">AI POWER-UP</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Empowering innovators with AI automation expertise and cutting-edge technology solutions.
+                    </p>
+                </div>
+
+                <!-- Product Column -->
+                <div class="space-y-4">
+                    <h4 class="font-bold retro-title text-white mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://Benrgy.github.io/ai-power-up-for-innovators-2025-11-01-7hpcg#features" class="hover:text-red-500 transition-colors duration-300">Features</a></li>
+                        <li><a href="https://Benrgy.github.io/ai-power-up-for-innovators-2025-11-01-7hpcg#benefits" class="hover:text-red-500 transition-colors duration-300">Benefits</a></li>
+                        <li><a href="https://Benrgy.github.io/ai-power-up-for-innovators-2025-11-01-7hpcg#testimonials" class="hover:text-red-500 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="space-y-4">
+                    <h4 class="font-bold retro-title text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://Benrgy.github.io/ai-power-up-for-innovators-2025-11-01-7hpcg#about" class="hover:text-red-500 transition-colors duration-300">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-red-500 transition-colors duration-300">Blog</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Careers</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div class="space-y-4">
+                    <h4 class="font-bold retro-title text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-red-500 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-red-500 transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Security</a></li>
+                        <li><a href="https://example.com" class="hover:text-red-500 transition-colors duration-300">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="border-t border-gray-800 pt-12 mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="space-y-2">
+                        <p class="font-bold retro-title text-white">Email</p>
+                        <a href="mailto:bengrauwde@hotmail.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+                            bengrauwde@hotmail.com
+                        </a>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-bold retro-title text-white">Follow Us</p>
+                        <div class="flex gap-4">
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="Twitter">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="GitHub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://example.com" class="text-gray-400 hover:text-red-500 transition-colors duration-300" aria-label="Facebook">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-bold retro-title text-white">Newsletter</p>
+                        <p class="text-gray-400 text-sm">Subscribe for AI insights and updates</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 AI Power-Up. All rights reserved. Powered by Claude (Anthropic).
+                </p>
+                <div class="flex gap-6 text-gray-400 text-sm">
+                    <a href="privacy.html" class="hover:text-red-500 transition-colors duration-300">Privacy</a>
+                    <a href="terms.html" class="hover:text-red-500 transition-colors duration-300">Terms</a>
+                    <a href="blog.html" class="hover:text-red-500 transition-colors duration-300">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
